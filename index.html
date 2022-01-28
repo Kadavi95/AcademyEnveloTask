@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RecruitmentTask</title>
     <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
   </head>
   <body>
@@ -24,27 +27,37 @@
           Możesz mieć swoją przesyłkę w kilkanaście sekund. Rozpocznij klikając
           w przycisk.
         </p>
-        <div class="numberAndCodeContainerFlex">
-          <label class="numberContainer">
+        <div class="numberAndCodeContainer">
+            <form class="formValidation" action="/">
+          <label class="numberContainer">Numer telefonu
             <input class="numberInput" type="number" placeholder="yourTelNumber" />
+            <p class="warningNumber"> </p>
           </label>
-          <label class="codeContainer">
-            <input class="codeInput" placeholder="yourCode"/>
+          <label class="codeContainer"> Kod odbioru
+            <input class="codeInput" type="number" placeholder="yourCode"/>
+            <p class="warningCode"> </p>
           </label>
+          <!-- <button class="pickUpButtonSecondary" type="submit">Odbierz przesyłkę</button> -->
+            </form>
+            <button class="pickUpButtonSecondary" type="submit">Odbierz przesyłkę</button>
         </div>
-        <button class="pickUpButtonSecondary">Odbierz przesyłkę</button>
-        <div class="modalContainer">
-          <h1 class="modalHeader">Paczka odebrana</h1>
-          <p class="modalInfo">
-            Zrobłeś to w czasie 10 sekund. Czy możemy zrobić coś jeszcze dla
-            Ciebie?
-          </p>
-          <div class="modalButtonsContainerFlex">
-            <button class="modalButtonEnd">To wszystko na dziś</button>
-            <button class="modalButtonContinue">Odbierz kolejną paczkę</button>
-          </div>
-        </div>
+        
+
       </section>
+      <div class="modalContainerBackground">
+        <div class="modalContainer">
+
+        <h1 class="modalHeader">Paczka odebrana</h1>
+        <p class="modalInfo">
+          Zrobłeś to w czasie 10 sekund. Czy możemy zrobić coś jeszcze dla
+          Ciebie?
+        </p>
+        <div class="modalButtonsContainerFlex">
+          <button class="modalButtonEnd">To wszystko na dziś</button>
+          <button class="modalButtonContinue">Odbierz kolejną paczkę</button>
+        </div>
+      </div>
+      </div>
     </main>
 </body>
 <script src="./Main.js"></script>

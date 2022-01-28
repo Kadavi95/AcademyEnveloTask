@@ -2,6 +2,22 @@ body {
   background-color: #c4c4c4;
   width: 100vw;
   height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+:root {
+  --header-color: red;
+  --paragraph-color: green;
+  --font-header: 48px;
+  --font-paragraph: 16px;
+  --font-button: 20px;
+  --font-weight: bold;
+  --button-width: 200px;
+  --button-height: 60px;
+  --button-radius: 5px;
+  --button-color: white;
+  --button-background: red;
+  --button-border: none;
+  --button-cursor: pointer;
 }
 .containerApp {
   height: 100%;
@@ -12,22 +28,92 @@ body {
 }
 .stepOneSection {
   width: 50%;
-  height: 50%;
+  height: 70%;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+}
+.header{
+  color: var(--header-color);
+  font-size: var(--font-header);
+  font-weight: var(--font-weight);
+}
+.info-paragraph{
+  color: var(--paragraph-color);
+  font-size: var(--font-paragraph);
+}
+.pickUpButton{
+  width: var(--button-width);
+  height: var(--button-height);
+  border-radius: var(--button-radius);
+  background-color: var(--button-background);
+  color: var(--button-color);
+  font-size: var(--font-button);
+  border: var(--button-border);
+  cursor: var(--button-cursor);
+}
+.pickUpButton:hover{
+  color: var(--button-background);
+  background-color: var(--button-color);
 }
 .stepTwoSection {
   display: none;
   width: 50%;
-  height: 50%;
+  height: 70%;
   border: 1px solid black;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.pickUpButtonSecondary{
+  width: var(--button-width);
+  height: var(--button-height);
+  border-radius: var(--button-radius);
+  background-color: var(--button-background);
+  color: var(--button-color);
+  font-size: var(--font-button);
+  border: var(--button-border);
+  cursor: var(--button-cursor);
+}
+.modalContainerBackground {
+  display: none;
+  background-color: gray;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  opacity: 1;
   justify-content: center;
   align-items: center;
 }
 .modalContainer {
-  display: none;
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid green;
+}
+
+.modalHeader{
+
+}
+
+.modalInfo{
+
+}
+.modalButtonsContainerFlex{
+
+}
+
+.modalButtonEnd{
+
+}
+.modalButtonContinue{
+  
 }
