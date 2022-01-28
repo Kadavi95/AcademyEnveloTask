@@ -23,14 +23,17 @@
       </section>
       <section class="stepTwoSection" display=>
         <h1 class="header">Envelo</h1>
-        <p class="info-paragraph">
+        <p class="info-paragraphSecodary">
           Możesz mieć swoją przesyłkę w kilkanaście sekund. Rozpocznij klikając
           w przycisk.
         </p>
         <div class="numberAndCodeContainer">
             <form class="formValidation" action="/">
           <label class="numberContainer">Numer telefonu
-            <input class="numberInput" type="number" placeholder="yourTelNumber" />
+            <input class="numberInput" type="tel"
+            pattern="[0-9]{9}" placeholder="yourTelNumber"
+            maxlength="14"
+            minlength="8" />
             <p class="warningNumber"> </p>
           </label>
           <label class="codeContainer"> Kod odbioru
@@ -38,8 +41,9 @@
             <p class="warningCode"> </p>
           </label>
           <!-- <button class="pickUpButtonSecondary" type="submit">Odbierz przesyłkę</button> -->
+          <button class="pickUpButtonSecondary" type="submit">Odbierz przesyłkę</button>
             </form>
-            <button class="pickUpButtonSecondary" type="submit">Odbierz przesyłkę</button>
+            <!-- <button class="pickUpButtonSecondary" type="submit">Odbierz przesyłkę</button> -->
         </div>
         
 
