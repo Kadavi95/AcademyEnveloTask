@@ -46,6 +46,7 @@ function clearTimer() {
 function jumpToNext() {
   counter++;
   setTimer();
+  console.log(setTimer);
   if (counter % 2 !== 0) {
     stepOneSection.style.display = "none";
     stepTwoSection.style.display = "flex";
@@ -95,7 +96,7 @@ function checkData(event) {
 
 pickUpButtonSecondary.addEventListener("click", checkData);
 
-function clearService() {
+function clearService(setTimer) {
   modalContainerBackground.style.display = "none";
   firstCondition = false;
   secondCondition = false;
@@ -106,12 +107,15 @@ function clearService() {
   codeInput = "";
   secondsCounter = 0;
   resultTime = null;
+  counter = 0;
+  console.log(setTimer);
   setTimer();
 }
 
-modalButtonContinue.addEventListener("click", clearService);
+modalButtonContinue.addEventListener("click", () => clearService(setTimer));
 
 function resetToInitialState(){
+  console.log(setTimer);
   modalContainerBackground.style.display = "none";
   stepTwoSection.style.display = "none";
   stepOneSection.style.display = "flex";
@@ -123,7 +127,9 @@ function resetToInitialState(){
   numberInput = "";
   codeInput = "";
   secondsCounter = 0;
+  counter = 0;
   resultTime = null;
 }
+console.log(setTimer);
 modalButtonEnd.addEventListener("click", resetToInitialState)
 
