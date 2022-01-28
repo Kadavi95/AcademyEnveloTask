@@ -96,11 +96,7 @@ function checkData(event) {
 
 pickUpButtonSecondary.addEventListener("click", checkData);
 
-function clearService(timerFn) {
-  secondsCounter = 0;
-  const timerFunction = timerFn;
-  timerFunction();
-  modalContainerBackground.style.display = "none";
+function resetData(){
   firstCondition = false;
   secondCondition = false;
   warningCode.innerHTML = "";
@@ -109,6 +105,22 @@ function clearService(timerFn) {
   numberInput.value = "";
   codeInput.value = "";
   resultTime = null;
+}
+
+function clearService(timerFn) {
+  secondsCounter = 0;
+  const timerFunction = timerFn;
+  timerFunction();
+  modalContainerBackground.style.display = "none";
+  // firstCondition = false;
+  // secondCondition = false;
+  // warningCode.innerHTML = "";
+  // warningNumber.innerHTML = "";
+  // modalInfo.innerHTML = "";
+  // numberInput.value = "";
+  // codeInput.value = "";
+  // resultTime = null;
+  resetData();
   counter = 0;
 }
 
@@ -120,13 +132,14 @@ function resetToInitialState() {
   modalContainerBackground.style.display = "none";
   stepTwoSection.style.display = "none";
   stepOneSection.style.display = "flex";
-  firstCondition = false;
-  secondCondition = false;
-  warningCode.innerHTML = "";
-  warningNumber.innerHTML = "";
-  modalInfo.innerHTML = "";
-  numberInput.value = "";
-  codeInput.value = "";
+  // firstCondition = false;
+  // secondCondition = false;
+  // warningCode.innerHTML = "";
+  // warningNumber.innerHTML = "";
+  // modalInfo.innerHTML = "";
+  // numberInput.value = "";
+  // codeInput.value = "";
+  resetData();
   resultTime = null;
 }
 modalButtonEnd.addEventListener("click", resetToInitialState);
