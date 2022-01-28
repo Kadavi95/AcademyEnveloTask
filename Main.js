@@ -106,8 +106,8 @@ function clearService(timerFn) {
   warningCode.innerHTML = "";
   warningNumber.innerHTML = "";
   modalInfo.innerHTML = "";
-  numberInput = "";
-  codeInput = "";
+  numberInput.value = "";
+  codeInput.value = "";
   resultTime = null;
   counter = 0;
 }
@@ -125,8 +125,8 @@ function resetToInitialState() {
   warningCode.innerHTML = "";
   warningNumber.innerHTML = "";
   modalInfo.innerHTML = "";
-  numberInput = "";
-  codeInput = "";
+  numberInput.value = "";
+  codeInput.value = "";
   resultTime = null;
 }
 modalButtonEnd.addEventListener("click", resetToInitialState);
