@@ -7,7 +7,12 @@ const codeInput = document.querySelector(".codeInput");
 const formValidation = document.querySelector(".formValidation");
 const warningNumber = document.querySelector(".warningNumber");
 const warningCode = document.querySelector(".warningCode");
-const modalContainerBackground = document.querySelector(".modalContainerBackground");
+const modalContainerBackground = document.querySelector(
+  ".modalContainerBackground"
+);
+const modalInfo = document.querySelector(".modalInfo");
+const modalButtonContinue = document.querySelector(".modalButtonContinue");
+const modalButtonEnd = document.querySelector(".modalButtonEnd");
 const warningsTextArray = [
   "Zła wartość numeru telefonu. Podaj poprawnie",
   "Dobra wartość numeru telefonu. Dziękujemy",
@@ -20,14 +25,27 @@ fetch("./assets/fakeData.json")
   .then((res) => res.json())
   .then((data) => (fakeData = data));
 
-setTimeout(() => {
-  console.log(fakeData);
-}, 500);
 let counter = 0;
+let secondsCounter = 0;
+let firstCondition = false;
+let secondCondition = false;
+let resultTime = null;
+let timer;
+function setTimer() {
+  timer = setInterval(() => {
+    secondsCounter++;
+    console.log(secondsCounter);
+  }, 1000);
+}
+function clearTimer() {
+  resultTime = secondsCounter;
+  console.log(resultTime);
+  clearInterval(timer);
+}
 
 function jumpToNext() {
   counter++;
-  console.log(counter);
+  setTimer();
   if (counter % 2 !== 0) {
     stepOneSection.style.display = "none";
     stepTwoSection.style.display = "flex";
@@ -35,16 +53,14 @@ function jumpToNext() {
 }
 pickUpButton.addEventListener("click", jumpToNext);
 
-function changeVisibilityModal(){
-  modalContainerBackground.style.display = "flex"
+function changeVisibilityModal() {
+  modalContainerBackground.style.display = "flex";
 }
 
 function checkData(event) {
   event.preventDefault();
   const userTelephoneNumber = fakeData.telephoneNumber.toString();
   const userCode = fakeData.code.toString();
-  let firstCondition = false;
-  let secondCondition = false
 
   if (
     numberInput.value.length !== 9 ||
@@ -60,20 +76,54 @@ function checkData(event) {
   }
   if (numberInput.value === userTelephoneNumber) {
     warningNumber.innerHTML = warningsTextArray[1];
-    warningNumber.style.color = "green"
+    warningNumber.style.color = "green";
     alert(warningsTextArray[1]);
     firstCondition = true;
-
   }
-  if(codeInput.value === userCode){
+  if (codeInput.value === userCode) {
     warningCode.innerHTML = warningsTextArray[3];
-    warningCode.style.color = "green"
+    warningCode.style.color = "green";
     alert(warningsTextArray[3]);
-    secondCondition = true
+    secondCondition = true;
   }
   if (firstCondition && secondCondition) {
-    changeVisibilityModal()
+    changeVisibilityModal();
+    clearTimer();
+    modalInfo.innerHTML = `Zrobłeś to w czasie ${resultTime} sekund. Czy możemy zrobić coś jeszcze dla Ciebie?`;
   }
 }
 
 pickUpButtonSecondary.addEventListener("click", checkData);
+
+function clearService() {
+  modalContainerBackground.style.display = "none";
+  firstCondition = false;
+  secondCondition = false;
+  warningCode.innerHTML = "";
+  warningNumber.innerHTML = "";
+  modalInfo.innerHTML = "";
+  numberInput = "";
+  codeInput = "";
+  secondsCounter = 0;
+  resultTime = null;
+  setTimer();
+}
+
+modalButtonContinue.addEventListener("click", clearService);
+
+function resetToInitialState(){
+  modalContainerBackground.style.display = "none";
+  stepTwoSection.style.display = "none";
+  stepOneSection.style.display = "flex";
+  firstCondition = false;
+  secondCondition = false;
+  warningCode.innerHTML = "";
+  warningNumber.innerHTML = "";
+  modalInfo.innerHTML = "";
+  numberInput = "";
+  codeInput = "";
+  secondsCounter = 0;
+  resultTime = null;
+}
+modalButtonEnd.addEventListener("click", resetToInitialState)
+

@@ -18,6 +18,7 @@ body {
   --button-background: red;
   --button-border: none;
   --button-cursor: pointer;
+  --button-tranision: all 0.3s ease-in-out;
 }
 .containerApp {
   height: 100%;
@@ -53,10 +54,11 @@ body {
   font-size: var(--font-button);
   border: var(--button-border);
   cursor: var(--button-cursor);
+  transition: var(--button-tranision);
 }
 .pickUpButton:hover{
   color: var(--button-background);
-  background-color: var(--button-color);
+  box-shadow: inset -100px 0 0 0 var(--button-color), inset 100px 0 0 0 var(--button-color);
 }
 .stepTwoSection {
   display: none;
@@ -76,6 +78,11 @@ body {
   font-size: var(--font-button);
   border: var(--button-border);
   cursor: var(--button-cursor);
+  transition: var(--button-tranision);
+}
+.pickUpButtonSecondary:hover{
+  color: var(--button-background);
+  box-shadow: inset -100px 0 0 0 var(--button-color), inset 100px 0 0 0 var(--button-color);
 }
 .modalContainerBackground {
   display: none;
@@ -112,8 +119,32 @@ body {
 }
 
 .modalButtonEnd{
-
+  width: var(--button-width);
+  height: var(--button-height);
+  border-radius: var(--button-radius);
+  background-color: var(--button-background);
+  color: var(--button-color);
+  font-size: var(--font-button);
+  border: var(--button-border);
+  cursor: var(--button-cursor);
+  transition: var(--button-tranision);
+}
+.modalButtonEnd:hover{
+  color: var(--button-background);
+  box-shadow: inset -100px 0 0 0 var(--button-color), inset 100px 0 0 0 var(--button-color);
 }
 .modalButtonContinue{
-  
+  width: var(--button-width);
+  height: var(--button-height);
+  border-radius: var(--button-radius);
+  background-color: var(--button-background);
+  color: var(--button-color);
+  font-size: var(--font-button);
+  border: var(--button-border);
+  cursor: var(--button-cursor);
+  transition: var(--button-tranision);
+}
+.modalButtonContinue:hover{
+  color: var(--button-background);
+  box-shadow: inset -100px 0 0 0 var(--button-color), inset 100px 0 0 0 var(--button-color);
 }
