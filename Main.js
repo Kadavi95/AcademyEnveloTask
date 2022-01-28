@@ -112,14 +112,6 @@ function clearService(timerFn) {
   const timerFunction = timerFn;
   timerFunction();
   modalContainerBackground.style.display = "none";
-  // firstCondition = false;
-  // secondCondition = false;
-  // warningCode.innerHTML = "";
-  // warningNumber.innerHTML = "";
-  // modalInfo.innerHTML = "";
-  // numberInput.value = "";
-  // codeInput.value = "";
-  // resultTime = null;
   resetData();
   counter = 0;
 }
@@ -132,6 +124,14 @@ function resetToInitialState() {
   modalContainerBackground.style.display = "none";
   stepTwoSection.style.display = "none";
   stepOneSection.style.display = "flex";
+  resetData();
+}
+modalButtonEnd.addEventListener("click", resetToInitialState);
+
+
+
+
+
   // firstCondition = false;
   // secondCondition = false;
   // warningCode.innerHTML = "";
@@ -139,7 +139,12 @@ function resetToInitialState() {
   // modalInfo.innerHTML = "";
   // numberInput.value = "";
   // codeInput.value = "";
-  resetData();
-  resultTime = null;
-}
-modalButtonEnd.addEventListener("click", resetToInitialState);
+  // resultTime = null;
+
+    // firstCondition = false;
+  // secondCondition = false;
+  // warningCode.innerHTML = "";
+  // warningNumber.innerHTML = "";
+  // modalInfo.innerHTML = "";
+  // numberInput.value = "";
+  // codeInput.value = "";
