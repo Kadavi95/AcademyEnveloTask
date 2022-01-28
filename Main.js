@@ -108,16 +108,15 @@ function clearService(timerFn) {
   modalInfo.innerHTML = "";
   numberInput = "";
   codeInput = "";
-
   resultTime = null;
   counter = 0;
-
-  // modalContainerBackground.style.display = "none";
 }
 
 modalButtonContinue.addEventListener("click", () => clearService(setTimer));
 
 function resetToInitialState() {
+  secondsCounter = 0;
+  counter = 0;
   modalContainerBackground.style.display = "none";
   stepTwoSection.style.display = "none";
   stepOneSection.style.display = "flex";
@@ -128,8 +127,6 @@ function resetToInitialState() {
   modalInfo.innerHTML = "";
   numberInput = "";
   codeInput = "";
-  secondsCounter = 0;
-  counter = 0;
   resultTime = null;
 }
 modalButtonEnd.addEventListener("click", resetToInitialState);
