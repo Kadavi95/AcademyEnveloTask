@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
-</head>
-<body>
-            
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RecruitmentTask</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+  </head>
+  <body>
+    <main class="containerApp">
+      <section class="stepOneSection">
+        <h1 class="header">Envelo</h1>
+        <p class="info-paragraph">
+          Możesz mieć swoją przesyłkę w kilkanaście sekund. Rozpocznij klikając
+          w przycisk.
+        </p>
+        <button class="pickUpButton">Odbierz przesyłkę</button>
+      </section>
+      <section class="stepTwoSection" display=>
+        <h1 class="header">Envelo</h1>
+        <p class="info-paragraph">
+          Możesz mieć swoją przesyłkę w kilkanaście sekund. Rozpocznij klikając
+          w przycisk.
+        </p>
+        <div class="numberAndCodeContainerFlex">
+          <label class="numberContainer">
+            <input class="numberInput" type="number" placeholder="yourTelNumber" />
+          </label>
+          <label class="codeContainer">
+            <input class="codeInput" placeholder="yourCode"/>
+          </label>
+        </div>
+        <button class="pickUpButtonSecondary">Odbierz przesyłkę</button>
+        <div class="modalContainer">
+          <h1 class="modalHeader">Paczka odebrana</h1>
+          <p class="modalInfo">
+            Zrobłeś to w czasie 10 sekund. Czy możemy zrobić coś jeszcze dla
+            Ciebie?
+          </p>
+          <div class="modalButtonsContainerFlex">
+            <button class="modalButtonEnd">To wszystko na dziś</button>
+            <button class="modalButtonContinue">Odbierz kolejną paczkę</button>
+          </div>
+        </div>
+      </section>
+    </main>
 </body>
+<script src="./Main.js"></script>
 </html>

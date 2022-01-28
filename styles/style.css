@@ -1,0 +1,33 @@
+body {
+  background-color: #c4c4c4;
+  width: 100vw;
+  height: 100vh;
+}
+.containerApp {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stepOneSection {
+  width: 50%;
+  height: 50%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.stepTwoSection {
+  display: none;
+  width: 50%;
+  height: 50%;
+  border: 1px solid black;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modalContainer {
+  display: none;
+}
