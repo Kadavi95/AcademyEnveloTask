@@ -7,8 +7,8 @@
     <title>RecruitmentTask</title>
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
   </head>
   <body>
@@ -28,25 +28,26 @@
           w przycisk.
         </p>
         <div class="numberAndCodeContainer">
-            <form class="formValidation" action="/">
-          <label class="numberContainer">Numer telefonu
-            <input class="numberInput" type="tel"
-            pattern="[0-9]{9}" placeholder="yourTelNumber"
-            maxlength="14"
-            minlength="8" />
-            <p class="warningNumber"> </p>
-          </label>
-          <label class="codeContainer"> Kod odbioru
-            <input class="codeInput" type="number" placeholder="yourCode"/>
-            <p class="warningCode"> </p>
-          </label>
+          <form class="formValidation" action="/">
+            <label class="numberContainer">Numer telefonu
+              <input class="numberInput" type="tel"
+              pattern="[0-9]{9}" placeholder="yourTelNumber"
+              maxlength="14"
+              minlength="8" />
+              <p class="warningNumber"> </p>
+            </label>
+            <label class="codeContainer"> Kod odbioru
+              <input class="codeInput" type="number" placeholder="yourCode"/>
+              <p class="warningCode"> </p>
+            </label>
           <!-- <button class="pickUpButtonSecondary" type="submit">Odbierz przesyłkę</button> -->
-          <button class="pickUpButtonSecondary" type="submit">Odbierz przesyłkę</button>
-            </form>
+            <button class="pickUpButtonSecondary" type="submit">Odbierz przesyłkę</button>
+          </form>
             <!-- <button class="pickUpButtonSecondary" type="submit">Odbierz przesyłkę</button> -->
         </div>
-        
-
+      </section>
+      <section class="loaderContainer">
+        <div class="fakeLoader"></div>
       </section>
       <div class="modalContainerBackground">
         <div class="modalContainer">

@@ -152,3 +152,34 @@ body {
   color: var(--button-background);
   box-shadow: inset -100px 0 0 0 var(--button-color), inset 100px 0 0 0 var(--button-color);
 }
+
+.loaderContainer{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: fuchsia;
+}
+
+.fakeLoader{
+  width : 80px;
+  height: 80px;
+  border: 16px solid white;
+  border-top:16px solid #BADA55;
+  border-radius: 50%;
+}
+
+.spinOn{
+  animation: spinner 1.5s linear infinite;
+}
+
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
