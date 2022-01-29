@@ -1,3 +1,4 @@
+import { refresh } from "./fakeLoader";
 const pickUpButton = document.querySelector(".pickUpButton");
 const stepOneSection = document.querySelector(".stepOneSection");
 const stepTwoSection = document.querySelector(".stepTwoSection");
@@ -18,7 +19,7 @@ const warningsTextArray = [
   "Zła wartość numeru telefonu. Podaj poprawnie",
   "Zła wartość kodu odbioru. Podaj poprawnie",
 ];
-
+console.log(refresh);
 let fakeData;
 fetch("./assets/fakeData.json")
   .then((res) => res.json())
@@ -118,23 +119,23 @@ function resetToInitialState() {
 modalButtonEnd.addEventListener("click", resetToInitialState);
 
 
-function refresh() {
-  const loaderContainer = document.querySelector('.loaderContainer');
-  const fakeLoader = document.querySelector(".fakeLoader");
-  loaderContainer.style.display = "flex";
-  fakeLoader.classList.add('spinOn');
-  const Timer = Math.floor(Math.random() * (5000 - 1000)) + 1000;
-  performFakeCall();
+// function refresh() {
+//   const loaderContainer = document.querySelector('.loaderContainer');
+//   const fakeLoader = document.querySelector(".fakeLoader");
+//   loaderContainer.style.display = "flex";
+//   fakeLoader.classList.add('spinOn');
+//   const Timer = Math.floor(Math.random() * (5000 - 1000)) + 1000;
+//   performFakeCall();
   
-  function performFakeCall () {
-      return new Promise(function (resolve, reject) {
-        setTimeout(function(){ resolve()}, Timer);
-      })
-    }
+//   function performFakeCall () {
+//       return new Promise(function (resolve, reject) {
+//         setTimeout(function(){ resolve()}, Timer);
+//       })
+//     }
   
-    performFakeCall().then(function(result) {
-      fakeLoader.classList.remove('spinOn');
-      loaderContainer.style.display = "none";
-      changeVisibilityModal();
-    });
-  }
+//     performFakeCall().then(function(result) {
+//       fakeLoader.classList.remove('spinOn');
+//       loaderContainer.style.display = "none";
+//       changeVisibilityModal();
+//     });
+//   }
