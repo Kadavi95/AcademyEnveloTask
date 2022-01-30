@@ -1,4 +1,4 @@
 export const warningsInfoArray = [
-  "Zła wartość numeru telefonu. Podaj poprawnie",
-  "Zła wartość kodu odbioru. Podaj poprawnie",
+  "Zły numer telefonu. Podaj poprawnie",
+  "Zła kod odbioru. Podaj poprawnie",
 ];

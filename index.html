@@ -5,45 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RecruitmentTask</title>
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
     <main class="containerApp">
       <section class="stepOneSection">
-        <h1 class="header">Envelo</h1>
-        <p class="info-paragraph">
-          Możesz mieć swoją przesyłkę w kilkanaście sekund. Rozpocznij klikając
-          w przycisk.
-        </p>
-        <button class="pickUpButton">Odbierz przesyłkę</button>
+        <div class="headerContainer">
+          <h1 class="header">Envelo</h1>
+        </div>
+        <div class="paragraphContainer">
+          <p class="info-paragraph">
+            Możesz mieć swoją przesyłkę w kilkanaście sekund. Rozpocznij
+            klikając w przycisk.
+          </p>
+        </div>
+        <div class="buttonContainer">
+          <button class="pickUpButton">Odbierz przesyłkę</button>
+        </div>
       </section>
-      <section class="stepTwoSection" display=>
-        <h1 class="header">Envelo</h1>
-        <p class="info-paragraphSecodary">
-          Możesz mieć swoją przesyłkę w kilkanaście sekund. Rozpocznij klikając
-          w przycisk.
-        </p>
+      <section class="stepTwoSection">
+        <div class="headerContainer">
+          <h1 class="header">Envelo</h1>
+        </div>
+
+        <div class="paragraphContainer">
+          <p class="info-paragraphSecodary">
+            Możesz mieć swoją przesyłkę w kilkanaście sekund. Rozpocznij
+            klikając w przycisk.
+          </p>
+        </div>
+
         <div class="numberAndCodeContainer">
           <form class="formValidation" action="/">
-            <label class="numberContainer">Numer telefonu
-              <input class="numberInput" type="tel"
-              pattern="[0-9]{9}" placeholder="yourTelNumber"
-              maxlength="14"
-              minlength="8" />
-              <p class="warningNumber"> </p>
+            <label class="numberContainer"
+              >Numer telefonu
+              <input
+                class="numberInput"
+                type="tel"
+                pattern="[0-9]{9}"
+                placeholder="yourTelNumber"
+                maxlength="14"
+                minlength="8"
+              />
             </label>
-            <label class="codeContainer"> Kod odbioru
-              <input class="codeInput" type="number" placeholder="yourCode"/>
-              <p class="warningCode"> </p>
+            <p class="warningNumber"></p>
+            <label class="codeContainer">
+              Kod odbioru
+              <input
+                class="codeInput"
+                type="number"
+                placeholder="yourCode"
+                minlength="3"
+                maxlength="5"
+              />
             </label>
-          <!-- <button class="pickUpButtonSecondary" type="submit">Odbierz przesyłkę</button> -->
-            <button class="pickUpButtonSecondary" type="submit">Odbierz przesyłkę</button>
-          </form>
+            <p class="warningCode"></p>
             <!-- <button class="pickUpButtonSecondary" type="submit">Odbierz przesyłkę</button> -->
+            <button class="pickUpButtonSecondary" type="submit">
+              Odbierz przesyłkę
+            </button>
+          </form>
+          <!-- <button class="pickUpButtonSecondary" type="submit">Odbierz przesyłkę</button> -->
         </div>
       </section>
       <section class="loaderContainer">
@@ -51,18 +80,16 @@
       </section>
       <div class="modalContainerBackground">
         <div class="modalContainer">
-
-        <h1 class="modalHeader">Paczka odebrana</h1>
-        <p class="modalInfo"></p>
-        <div class="modalButtonsContainerFlex">
-          <button class="modalButtonEnd">To wszystko na dziś</button>
-          <button class="modalButtonContinue">Odbierz kolejną paczkę</button>
+          <h1 class="modalHeader">Paczka odebrana</h1>
+          <p class="modalInfo"></p>
+          <div class="modalButtonsContainerFlex">
+            <button class="modalButtonEnd">To wszystko na dziś</button>
+            <button class="modalButtonContinue">Odbierz kolejną paczkę</button>
+          </div>
         </div>
       </div>
-      </div>
     </main>
-</body>
+  </body>
 
-<script type="module" src="./app/App.js"></script>
-
+  <script type="module" src="./app/App.js"></script>
 </html>
