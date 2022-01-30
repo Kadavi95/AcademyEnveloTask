@@ -21,8 +21,8 @@ body {
   --button-tranision: all 0.3s ease-in-out;
   --loader-width: 60px;
   --loader-height: 60px;
-  --loader-color_primary: #271052;
-  --loader-color_secondary: #706c16;
+  --loader-color_primary: red;
+  --loader-color_secondary: white;
 }
 .containerApp {
   height: 100%;
@@ -111,6 +111,12 @@ body {
   box-shadow: inset -100px 0 0 0 var(--button-color),
     inset 100px 0 0 0 var(--button-color);
 }
+@media screen and (max-width: 768px) {
+  .pickUpButton:hover {
+    box-shadow: none;
+    color: var(--button-color); 
+  }
+}
 .stepTwoSection {
   display: none;
   width: 50%;
@@ -127,7 +133,13 @@ body {
 @media screen and (max-width: 768px) {
   .stepTwoSection {
     width: 100%;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
+}
+.numberContainer{
+  padding: 5px 0px;
 }
 .numberInput {
   outline: none;
@@ -164,6 +176,9 @@ label {
   display: flex;
   flex-direction: column;
   font-size: 20px;
+}
+.codeContainer{
+  padding: 5px 0px;
 }
 .codeInput {
   outline: none;
@@ -218,6 +233,12 @@ input::-webkit-inner-spin-button {
   box-shadow: inset -100px 0 0 0 var(--button-color),
     inset 100px 0 0 0 var(--button-color);
 }
+@media screen and (max-width: 768px) {
+  .pickUpButtonSecondary:hover {
+    box-shadow: none;
+    color: var(--button-color); 
+  }
+}
 .modalContainerBackground {
   display: none;
   position: fixed;
@@ -231,22 +252,55 @@ input::-webkit-inner-spin-button {
   align-items: center;
 }
 .modalContainer {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.85);
   width: 50%;
   height: 70%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  border: 1px solid green;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 1);
 }
-
+@media screen and (max-width: 768px) {
+  .modalContainer{
+    width: 100%;
+    height: 100%;
+  }
+}
+.modalHeaderContainer{
+  height: 30%;
+  display: flex;
+  align-items: center;
+}
 .modalHeader {
+  color: white;
+  font-size: var(--font-header);
+  font-weight: var(--font-weight);
+  text-align: center;
 }
-
+.modalInfoContainer{
+  height: 30%;
+  display: flex;
+  align-items: center;
+}
 .modalInfo {
+  color: white;
+  text-align: center;
 }
 .modalButtonsContainerFlex {
+  display: flex;
+  justify-content: space-evenly;
+
+  align-items: center;
+  width: 100%;
+  height: 30%;
+}
+@media screen and (max-width: 768px) {
+  .modalButtonsContainerFlex {
+    flex-direction: column;
+  }
 }
 
 .modalButtonEnd {
@@ -265,6 +319,13 @@ input::-webkit-inner-spin-button {
   box-shadow: inset -100px 0 0 0 var(--button-color),
     inset 100px 0 0 0 var(--button-color);
 }
+@media screen and (max-width: 768px) {
+  .modalButtonEnd:hover{
+    box-shadow: none;
+    color: var(--button-color); 
+  }
+  
+}
 .modalButtonContinue {
   width: var(--button-width);
   height: var(--button-height);
@@ -280,6 +341,13 @@ input::-webkit-inner-spin-button {
   color: var(--button-background);
   box-shadow: inset -100px 0 0 0 var(--button-color),
     inset 100px 0 0 0 var(--button-color);
+}
+@media screen and (max-width: 768px) {
+  .modalButtonContinue:hover{
+    box-shadow: none;
+    color: var(--button-color); 
+  }
+  
 }
 
 .loaderContainer {
