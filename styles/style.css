@@ -39,7 +39,7 @@ body {
 }
 .stepOneSection {
   width: 50%;
-  height: 80%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -116,7 +116,7 @@ body {
 .stepTwoSection {
   display: none;
   width: 50%;
-  height: 80%;
+  height: 90%;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -250,7 +250,7 @@ input::-webkit-inner-spin-button {
 .modalContainer {
   background-color: rgba(0, 0, 0, 0.85);
   width: 50%;
-  height: 80%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
