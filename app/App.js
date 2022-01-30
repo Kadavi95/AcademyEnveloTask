@@ -1,6 +1,7 @@
 import { appendLoader } from "./FakeLoader.js";
 import { resetData } from "./ResetData.js";
 import { warningsInfoArray } from "./WarningsInfoArray.js";
+import { jumpToNext } from "./JumpToNext.js";
 const pickUpButton = document.querySelector(".pickUpButton");
 const stepOneSection = document.querySelector(".stepOneSection");
 const stepTwoSection = document.querySelector(".stepTwoSection");
@@ -38,12 +39,13 @@ function clearTimer() {
   clearInterval(timer);
 }
 
-function jumpToNext() {
-  setTimer();
-  stepOneSection.style.display = "none";
-  stepTwoSection.style.display = "flex";
-}
-pickUpButton.addEventListener("click", jumpToNext);
+// function jumpToNext() {
+//   setTimer();
+//   stepOneSection.style.display = "none";
+//   stepTwoSection.style.display = "flex";
+// }
+
+pickUpButton.addEventListener("click", () => jumpToNext(setTimer));
 
 function changeVisibilityModal() {
   modalContainerBackground.style.display = "flex";
