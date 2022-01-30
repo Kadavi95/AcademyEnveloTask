@@ -1,12 +1,12 @@
 body {
-  background-color: #c4c4c4;
+  background-color: #f5f5f5;
   width: 100vw;
   height: 100vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 :root {
   --header-color: red;
-  --paragraph-color: green;
+  --paragraph-color: black;
   --font-header: 48px;
   --font-paragraph: 16px;
   --font-button: 20px;
@@ -19,6 +19,10 @@ body {
   --button-border: none;
   --button-cursor: pointer;
   --button-tranision: all 0.3s ease-in-out;
+  --loader-width: 60px;
+  --loader-height: 60px;
+  --loader-color_primary: #271052;
+  --loader-color_secondary: #706c16;
 }
 .containerApp {
   height: 100%;
@@ -26,30 +30,42 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #e3e3e3;
 }
 .stepOneSection {
   width: 50%;
   height: 70%;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 1);
 }
-.header{
+@media screen and (max-width: 768px) {
+  .stepOneSection {
+    width: 100%;
+  }
+}
+.header {
   color: var(--header-color);
   font-size: var(--font-header);
   font-weight: var(--font-weight);
 }
-.info-paragraph{
+.info-paragraph {
   color: var(--paragraph-color);
   font-size: var(--font-paragraph);
+  text-align: center;
 }
-.info-paragraphSecodary{
+.info-paragraphSecodary {
   color: var(--paragraph-color);
   font-size: var(--font-paragraph);
+  text-align: center;
 }
-.pickUpButton{
+.pickUpButton {
   width: var(--button-width);
   height: var(--button-height);
   border-radius: var(--button-radius);
@@ -60,20 +76,71 @@ body {
   cursor: var(--button-cursor);
   transition: var(--button-tranision);
 }
-.pickUpButton:hover{
+.pickUpButton:hover {
   color: var(--button-background);
-  box-shadow: inset -100px 0 0 0 var(--button-color), inset 100px 0 0 0 var(--button-color);
+  box-shadow: inset -100px 0 0 0 var(--button-color),
+    inset 100px 0 0 0 var(--button-color);
 }
 .stepTwoSection {
   display: none;
   width: 50%;
   height: 70%;
-  border: 1px solid black;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 1);
 }
-.pickUpButtonSecondary{
+.numberInput {
+  outline: none;
+  padding: 20px 50px;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  font-size: 20px;
+}
+.numberInput:focus {
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(56, 45, 170, 0.79);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(56, 45, 170, 0.79);
+  box-shadow: inset 0px 0px 10px 0px rgba(56, 45, 170, 0.79);
+}
+.numberInput:hover {
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 12, 1);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 12, 1);
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 12, 1);
+}
+.formValidation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+.codeInput {
+  outline: none;
+  padding: 20px 50px;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  font-size: 20px;
+}
+.codeInput:focus {
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(56, 45, 170, 0.79);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(56, 45, 170, 0.79);
+  box-shadow: inset 0px 0px 10px 0px rgba(56, 45, 170, 0.79);
+}
+.codeInput:hover {
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 12, 1);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 12, 1);
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 12, 1);
+}
+.pickUpButtonSecondary {
   width: var(--button-width);
   height: var(--button-height);
   border-radius: var(--button-radius);
@@ -84,9 +151,10 @@ body {
   cursor: var(--button-cursor);
   transition: var(--button-tranision);
 }
-.pickUpButtonSecondary:hover{
+.pickUpButtonSecondary:hover {
   color: var(--button-background);
-  box-shadow: inset -100px 0 0 0 var(--button-color), inset 100px 0 0 0 var(--button-color);
+  box-shadow: inset -100px 0 0 0 var(--button-color),
+    inset 100px 0 0 0 var(--button-color);
 }
 .modalContainerBackground {
   display: none;
@@ -101,7 +169,7 @@ body {
   align-items: center;
 }
 .modalContainer {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 50%;
   height: 70%;
   display: flex;
@@ -111,18 +179,15 @@ body {
   border: 1px solid green;
 }
 
-.modalHeader{
-
+.modalHeader {
 }
 
-.modalInfo{
-
+.modalInfo {
 }
-.modalButtonsContainerFlex{
-
+.modalButtonsContainerFlex {
 }
 
-.modalButtonEnd{
+.modalButtonEnd {
   width: var(--button-width);
   height: var(--button-height);
   border-radius: var(--button-radius);
@@ -133,11 +198,12 @@ body {
   cursor: var(--button-cursor);
   transition: var(--button-tranision);
 }
-.modalButtonEnd:hover{
+.modalButtonEnd:hover {
   color: var(--button-background);
-  box-shadow: inset -100px 0 0 0 var(--button-color), inset 100px 0 0 0 var(--button-color);
+  box-shadow: inset -100px 0 0 0 var(--button-color),
+    inset 100px 0 0 0 var(--button-color);
 }
-.modalButtonContinue{
+.modalButtonContinue {
   width: var(--button-width);
   height: var(--button-height);
   border-radius: var(--button-radius);
@@ -148,12 +214,13 @@ body {
   cursor: var(--button-cursor);
   transition: var(--button-tranision);
 }
-.modalButtonContinue:hover{
+.modalButtonContinue:hover {
   color: var(--button-background);
-  box-shadow: inset -100px 0 0 0 var(--button-color), inset 100px 0 0 0 var(--button-color);
+  box-shadow: inset -100px 0 0 0 var(--button-color),
+    inset 100px 0 0 0 var(--button-color);
 }
 
-.loaderContainer{
+.loaderContainer {
   display: none;
   position: fixed;
   top: 50%;
@@ -164,22 +231,26 @@ body {
   opacity: 1;
   justify-content: center;
   align-items: center;
-  background-color: fuchsia;
+  background-color: transparent;
 }
 
-.fakeLoader{
-  width : 80px;
-  height: 80px;
-  border: 16px solid white;
-  border-top:16px solid #BADA55;
-  border-radius: 50%;
+.fakeLoader {
+  width: var(--loader-width);
+  height: var(--loader-height);
+  border: 16px solid var(--loader-color_primary);
+  border-top: 16px solid var(--loader-color_secondary);
+  border-radius: 100%;
 }
 
-.spinOn{
-  animation: spinner 1.5s linear infinite;
+.spinOn {
+  animation: spinner 1s linear infinite;
 }
 
 @keyframes spinner {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
