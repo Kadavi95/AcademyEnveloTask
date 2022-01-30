@@ -1,7 +1,7 @@
 export function resetData(warningCode, warningNumber, modalInfo, numberInput, codeInput, resultTime, infoParagraphSecodary) {
-  warningCode.innerHTML = "";
-  warningNumber.innerHTML = "";
-  modalInfo.innerHTML = "";
+  warningCode.innerText = "";
+  warningNumber.innerText = "";
+  modalInfo.innerText = "";
   numberInput.value = "";
   codeInput.value = "";
   resultTime = null;

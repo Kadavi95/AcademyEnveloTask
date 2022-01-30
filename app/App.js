@@ -19,6 +19,7 @@ const modalButtonContinue = document.querySelector(".modalButtonContinue");
 const modalButtonEnd = document.querySelector(".modalButtonEnd");
 const infoParagraphSecodary = document.querySelector(".info-paragraphSecodary");
 
+
 let fakeData;
 fetch("./assets/fakeData.json")
   .then((res) => res.json())
@@ -39,12 +40,6 @@ function clearTimer() {
   clearInterval(timer);
 }
 
-// function jumpToNext() {
-//   setTimer();
-//   stepOneSection.style.display = "none";
-//   stepTwoSection.style.display = "flex";
-// }
-
 pickUpButton.addEventListener("click", () => jumpToNext(setTimer));
 
 function changeVisibilityModal() {
@@ -60,24 +55,24 @@ function checkData(event) {
 
   const isCodeCorrect = codeInput.value === userCode;
   if (!isPhoneCorrect && isCodeCorrect) {
-    warningNumber.innerHTML = warningsInfoArray[0];
-    warningCode.innerHTML = "";
+    warningNumber.innerText = warningsInfoArray[0];
+    warningCode.innerText = "";
   }
   if (isPhoneCorrect && !isCodeCorrect) {
-    warningNumber.innerHTML = "";
-    warningCode.innerHTML = warningsInfoArray[1];
+    warningNumber.innerText = "";
+    warningCode.innerText = warningsInfoArray[1];
   }
   if (!isPhoneCorrect && !isCodeCorrect) {
-    warningNumber.innerHTML = warningsInfoArray[0];
-    warningCode.innerHTML = warningsInfoArray[1];
+    warningNumber.innerText = warningsInfoArray[0];
+    warningCode.innerText = warningsInfoArray[1];
   }
 
   if (isPhoneCorrect && isCodeCorrect) {
-    warningNumber.innerHTML = "";
-    warningCode.innerHTML = "";
+    warningNumber.innerText = "";
+    warningCode.innerText = "";
     infoParagraphSecodary.style.opacity = "0.0";
     clearTimer();
-    modalInfo.innerHTML = `Zrobłeś to w czasie ${resultTime} sekund. Czy możemy zrobić coś jeszcze dla Ciebie?`;
+    modalInfo.innerText = `Zrobłeś to w czasie ${resultTime} sekund. Czy możemy zrobić coś jeszcze dla Ciebie?`;
     appendLoader(changeVisibilityModal);
   }
 }
