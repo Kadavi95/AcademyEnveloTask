@@ -7,13 +7,15 @@ export function appendLoader(changeVisibilityModal) {
   performFakeCall();
 
   function performFakeCall() {
-    return new Promise(function (resolve, reject) {
+    // return new Promise(function (resolve, reject) {
+    return new Promise((resolve, reject) => {
       setTimeout(function () {
         resolve();
       }, Timer);
     });
   }
-  performFakeCall().then(function (result) {
+  // performFakeCall().then(function (result) {
+    performFakeCall().then((result) => {
     fakeLoader.classList.remove("spinOn");
     loaderContainer.style.display = "none";
     changeVisibilityModal();
